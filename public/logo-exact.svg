@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="350" viewBox="0 0 600 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Noto+Serif+Display:wght@700&display=swap');
+      .oswald {
+        font-family: 'Oswald', Arial, sans-serif;
+        font-weight: 700;
+        font-size: 72px;
+        fill: #222;
+        letter-spacing: 2px;
+      }
+      .noto {
+        font-family: 'Noto Serif Display', serif;
+        font-weight: 700;
+        font-size: 80px;
+        fill: #e1a05a;
+        font-style: italic;
+        letter-spacing: 1px;
+      }
+      .icon {
+        fill: #222;
+      }
+    </style>
+  </defs>
+  <!-- YOUTH MUSLIM -->
+  <text x="60" y="110" class="oswald">YOUTH MUSLIM</text>
+  <!-- Sports (overlapping) -->
+  <text x="320" y="190" class="noto">Sports</text>
+  <!-- Rounded rectangle for icons -->
+  <rect x="80" y="210" rx="22" ry="22" width="440" height="70" fill="#fff" stroke="#222" stroke-width="3"/>
+  <!-- Placeholder icons (vector approximations) -->
+  <!-- Table tennis -->
+  <circle class="icon" cx="120" cy="245" r="10"/>
+  <rect class="icon" x="135" y="240" width="18" height="6" rx="3"/>
+  <!-- Basketball -->
+  <circle class="icon" cx="180" cy="245" r="12" stroke="#222" stroke-width="2" fill="none"/>
+  <path class="icon" d="M168 245 Q180 257 192 245 Q180 233 168 245" stroke="#222" stroke-width="2" fill="none"/>
+  <!-- Soccer player -->
+  <circle class="icon" cx="240" cy="245" r="8"/>
+  <rect class="icon" x="250" y="237" width="18" height="6" rx="3"/>
+  <!-- Running figure -->
+  <rect class="icon" x="290" y="237" width="6" height="16" rx="3"/>
+  <rect class="icon" x="298" y="245" width="16" height="6" rx="3"/>
+  <!-- Soccer ball -->
+  <circle class="icon" cx="360" cy="245" r="10" stroke="#222" stroke-width="2" fill="none"/>
+  <circle class="icon" cx="360" cy="245" r="3"/>
+  <!-- Swoosh -->
+  <path class="icon" d="M390 255 Q450 225 500 245" stroke="#222" stroke-width="3" fill="none"/>
+</svg>
