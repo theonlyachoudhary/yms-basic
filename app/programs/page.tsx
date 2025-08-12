@@ -14,36 +14,35 @@ export default function ProgramsPage() {
       boysColor: "#FFD166",
       girlsColor: "#FFB5A7",
       duration: "45 minutes",
-      groupSize: "6-8 children",
+  // groupSize removed
       image: "/placeholder.svg?height=300&width=400&text=Little+Champions+Program",
       subCamps: [
         {
-          name: "Multi-Sport Explorer",
-          description: "Introduction to various sports through games and activities",
-          focus: ["Basic motor skills", "Following instructions", "Sharing", "Islamic manners"],
-          schedule: "Mon/Wed 4:00-4:45 PM",
-          price: "$80/month"
+          name: "Girls Basketball",
+          description: "Basketball program for girls at Ackerman Sports & Fitness Center",
+          focus: [
+            "Dribbling basics",
+            "Shooting form",
+            "Passing & catching",
+            "Listening skills",
+            "Playing as a team"
+          ],
+          schedule: "Sundays, Aug 9 – Sep 14",
+          price: "Ackerman Sports & Fitness Center",
+          note: "🚨Deadline Aug 16"
         },
         {
-          name: "Soccer Sprouts", 
-          description: "Basic soccer skills with emphasis on fun and teamwork",
-          focus: ["Ball control", "Running", "Teamwork", "Listening skills"],
-          schedule: "Tue/Thu 4:00-4:45 PM",
-          price: "$85/month"
-        },
-        {
-          name: "Basketball Buddies",
-          description: "Introduction to basketball through age-appropriate activities",
-          focus: ["Hand-eye coordination", "Dribbling basics", "Sharing", "Taking turns"],
-          schedule: "Sat 9:00-9:45 AM",
-          price: "$85/month"
-        },
-        {
-          name: "Track & Field Tots",
-          description: "Running, jumping, and throwing in a fun environment",
-          focus: ["Running form", "Jumping", "Throwing", "Following directions"],
-          schedule: "Sat 10:00-10:45 AM", 
-          price: "$80/month"
+          name: "Boys Soccer",
+          description: "Soccer program for boys at Spring Ave Recreation Center",
+          focus: [
+            "Dribbling",
+            "Kicking technique",
+            "Following rules",
+            "Sharing the ball",
+            "Sportsmanship"
+          ],
+          schedule: "Saturdays, Aug 23 – Sep 27",
+          price: "Spring Ave Recreation Center"
         }
       ]
     },
@@ -55,36 +54,75 @@ export default function ProgramsPage() {
       boysColor: "#2DB5A8",
       girlsColor: "#74D3CE",
       duration: "60 minutes",
-      groupSize: "8-10 children",
+  // groupSize removed
       image: "/placeholder.svg?height=300&width=400&text=Rising+Stars+Program",
       subCamps: [
         {
-          name: "Soccer Academy",
-          description: "Comprehensive soccer training with skill development focus",
-          focus: ["Dribbling", "Passing", "Shooting", "Team strategy", "Islamic sportsmanship"],
-          schedule: "Mon/Wed 5:00-6:00 PM",
-          price: "$95/month"
+          name: "Boys Tennis",
+          description: "Tennis program for boys at Madison Meadows Tennis Courts",
+          focus: [
+            "Forehand & backhand",
+            "Rallying",
+            "Serving basics",
+            "Court movement",
+            "Respect for opponents"
+          ],
+          schedule: "Fridays, Aug 29 – Sep 26",
+          price: "Madison Meadows Tennis Courts"
         },
         {
-          name: "Basketball Skills",
-          description: "Fundamental basketball techniques and game understanding",
-          focus: ["Dribbling", "Shooting form", "Defense", "Team play", "Respect for opponents"],
-          schedule: "Tue/Thu 5:00-6:00 PM",
-          price: "$95/month"
+          name: "Girls Soccer",
+          description: "Soccer program for girls at Spring Ave Recreation Center",
+          focus: [
+            "Dribbling",
+            "Passing",
+            "Shooting",
+            "Defending",
+            "Encouraging teammates"
+          ],
+          schedule: "Sundays, Sep 7 – Oct 5",
+          price: "Spring Ave Recreation Center"
         },
         {
-          name: "Track & Field Academy",
-          description: "Introduction to track and field events with proper technique",
-          focus: ["Running technique", "Long jump", "Shot put basics", "Goal setting"],
-          schedule: "Sat 11:00 AM-12:00 PM",
-          price: "$90/month"
+          name: "Boys Soccer",
+          description: "Soccer program for boys at Sunset Knoll Recreation Center",
+          focus: [
+            "Ball control",
+            "Passing accuracy",
+            "Shooting technique",
+            "Defensive positioning",
+            "Teamwork"
+          ],
+          schedule: "Sundays, Aug 24 – Sep 28",
+          price: "Sunset Knoll Recreation Center"
         },
         {
-          name: "Tennis Basics",
-          description: "Tennis fundamentals in a supportive Islamic environment",
-          focus: ["Racket control", "Forehand/Backhand", "Court awareness", "Patience"],
-          schedule: "Fri 4:00-5:00 PM",
-          price: "$100/month"
+          name: "Boys Basketball",
+          description: "Basketball program for boys at Ackerman Sports & Fitness Center",
+          focus: [
+            "Dribbling under pressure",
+            "Layups & shooting",
+            "Passing in motion",
+            "Defensive stance",
+            "Game rules"
+          ],
+          schedule: "Saturdays, Sep 6 – Oct 12",
+          price: "Ackerman Sports & Fitness Center",
+          note: "Early Bird Code: bbeb"
+        },
+        {
+          name: "Girls Volleyball",
+          description: "Volleyball program for girls at Ackerman Sports & Fitness Center",
+          focus: [
+            "Underhand serve",
+            "Bumping & setting",
+            "Court awareness",
+            "Calling the ball",
+            "Supporting teammates"
+          ],
+          schedule: "Sundays, Sep 7 – Oct 5",
+          price: "Ackerman Sports & Fitness Center",
+          note: "Early Bird Code: Yveb"
         }
       ]
     },
@@ -96,101 +134,52 @@ export default function ProgramsPage() {
       boysColor: "#2C5E44",
       girlsColor: "#C97A97", 
       duration: "75 minutes",
-      groupSize: "10-12 children",
+  // groupSize removed
       image: "/placeholder.svg?height=300&width=400&text=Future+Leaders+Program",
       subCamps: [
         {
-          name: "Elite Soccer",
-          description: "Advanced soccer training with competitive preparation",
-          focus: ["Advanced techniques", "Tactical awareness", "Leadership", "Tournament prep"],
-          schedule: "Mon/Wed/Fri 6:00-7:15 PM",
-          price: "$120/month"
+          name: "Boys Tennis",
+          description: "Tennis program for boys at Madison Meadows Tennis Courts",
+          focus: [
+            "Serve technique",
+            "Forehand/backhand consistency",
+            "Net play",
+            "Match scoring",
+            "Sportsmanship"
+          ],
+          schedule: "Fridays, Aug 29 – Sep 26",
+          price: "Madison Meadows Tennis Courts"
         },
         {
-          name: "Basketball Academy",
-          description: "Competitive basketball training with character development",
-          focus: ["Advanced skills", "Game strategy", "Leadership roles", "Mentoring younger players"],
-          schedule: "Tue/Thu/Sat 6:00-7:15 PM", 
-          price: "$120/month"
+          name: "Boys Soccer",
+          description: "Soccer program for boys at Sunset Knoll Recreation Center",
+          focus: [
+            "Advanced dribbling",
+            "Passing under pressure",
+            "Shooting accuracy",
+            "Defensive tactics",
+            "Game strategy"
+          ],
+          schedule: "Sundays, Aug 24 – Sep 28",
+          price: "Sunset Knoll Recreation Center"
         },
         {
-          name: "Track & Field Pro",
-          description: "Specialized track and field training for competition",
-          focus: ["Event specialization", "Competition prep", "Personal records", "Team leadership"],
-          schedule: "Mon/Wed/Fri 7:30-8:45 PM",
-          price: "$115/month"
-        },
-        {
-          name: "Tennis Academy",
-          description: "Competitive tennis training with Islamic character building",
-          focus: ["Match play", "Strategy", "Mental toughness", "Respect and humility"],
-          schedule: "Tue/Thu 6:00-7:15 PM",
-          price: "$125/month"
-        },
-        {
-          name: "Swimming Program",
-          description: "Competitive swimming in gender-appropriate sessions",
-          focus: ["Stroke technique", "Endurance", "Competition", "Self-discipline"],
-          schedule: "Sat/Sun 2:00-3:15 PM",
-          price: "$110/month"
+          name: "Girls Volleyball",
+          description: "Volleyball program for girls at Ackerman Sports & Fitness Center",
+          focus: [
+            "Overhand serve",
+            "Setting & spiking",
+            "Rotations",
+            "Team communication",
+            "Game rules"
+          ],
+          schedule: "Sundays, Sep 7 – Oct 5",
+          price: "Ackerman Sports & Fitness Center",
+          note: "Early Bird Code: gveb"
         }
       ]
     },
-    {
-      age: "14-16",
-      title: "Elite Athletes",
-      subtitle: "Competitive Excellence with Character",
-      description: "Teenagers train at elite levels while maintaining Islamic identity and preparing for scholarships.",
-      boysColor: "#9B1D20",
-      girlsColor: "#6A3F78",
-      duration: "90 minutes", 
-      groupSize: "12-15 teens",
-      image: "/placeholder.svg?height=300&width=400&text=Elite+Athletes+Program",
-      subCamps: [
-        {
-          name: "Soccer Elite",
-          description: "High-level soccer training for scholarship opportunities",
-          focus: ["Elite techniques", "College prep", "Leadership", "Community service"],
-          schedule: "Mon/Wed/Fri 7:00-8:30 PM",
-          price: "$150/month"
-        },
-        {
-          name: "Basketball Elite", 
-          description: "Competitive basketball with college recruitment focus",
-          focus: ["Advanced gameplay", "Scholarship prep", "Character development", "Mentorship"],
-          schedule: "Tue/Thu/Sat 7:00-8:30 PM",
-          price: "$150/month"
-        },
-        {
-          name: "Track & Field Elite",
-          description: "Elite track and field training for state competitions",
-          focus: ["Competition training", "Record breaking", "College recruitment", "Islamic leadership"],
-          schedule: "Mon/Wed/Fri 8:45-10:15 PM",
-          price: "$145/month"
-        },
-        {
-          name: "Tennis Elite",
-          description: "Tournament-level tennis training with character focus",
-          focus: ["Tournament play", "Ranking improvement", "College prep", "Islamic values"],
-          schedule: "Tue/Thu/Sat 7:30-9:00 PM",
-          price: "$160/month"
-        },
-        {
-          name: "Swimming Elite",
-          description: "Competitive swimming for state and national competitions",
-          focus: ["Elite training", "Competition strategy", "Time improvement", "Leadership"],
-          schedule: "Daily 6:00-7:30 AM",
-          price: "$140/month"
-        },
-        {
-          name: "Martial Arts",
-          description: "Islamic martial arts focusing on discipline and self-defense",
-          focus: ["Self-defense", "Discipline", "Respect", "Physical fitness", "Islamic principles"],
-          schedule: "Mon/Wed/Fri 8:00-9:30 PM",
-          price: "$130/month"
-        }
-      ]
-    }
+  // Elite Athletes section removed
   ]
 
   return (
@@ -208,6 +197,23 @@ export default function ProgramsPage() {
           <p className="text-xl text-slate-600 max-w-3xl">
             Choose from our specialized sports camps designed to develop both athletic excellence and Islamic character at every age level.
           </p>
+          {/* Navigation Tags */}
+          <div className="flex flex-wrap gap-3 mt-8 justify-start">
+            {programs.map((program, idx) => (
+              <a
+                key={program.title}
+                href={`#${program.title.replace(/\s+/g, '-')}`}
+                className="focus:outline-none"
+              >
+                <Badge
+                  className="text-lg px-5 py-2 font-oswald cursor-pointer hover:bg-teal-600 hover:text-white transition-colors"
+                  style={{ backgroundColor: program.boysColor, color: '#fff' }}
+                >
+                  {program.title}
+                </Badge>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -216,7 +222,7 @@ export default function ProgramsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-24">
             {programs.map((program, index) => (
-              <div key={index}>
+              <div key={index} id={program.title.replace(/\s+/g, '-')}> 
                 {/* Age Group Header */}
                 <div className="text-center mb-12">
                   <div className="flex items-center justify-center gap-4 mb-4">
@@ -282,10 +288,7 @@ export default function ProgramsPage() {
                             <Clock className="h-4 w-4 text-teal-600" />
                             <span className="text-slate-600">{program.duration}</span>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <Users className="h-4 w-4 text-teal-600" />
-                            <span className="text-slate-600">{program.groupSize}</span>
-                          </div>
+                          {/* groupSize removed from display */}
                           <div className="flex items-center gap-2">
                             <Calendar className="h-4 w-4 text-teal-600" />
                             <span className="text-slate-600 text-xs">{camp.schedule}</span>
@@ -295,21 +298,9 @@ export default function ProgramsPage() {
                             <span className="text-slate-600 font-semibold">{camp.price}</span>
                           </div>
                         </div>
-                        <div>
-                          <h4 className="font-semibold text-slate-800 mb-2 flex items-center gap-2 font-oswald">
-                            <Heart className="h-4 w-4 text-pink-500" />
-                            Focus Areas
-                          </h4>
-                          <div className="flex flex-wrap gap-1">
-                            {camp.focus.map((item, i) => (
-                              <Badge key={i} variant="outline" className="text-xs">
-                                {item}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
+                        {/* Focus Areas section removed */}
                         <Button 
-                          className="w-full group-hover:bg-teal-600 group-hover:text-white transition-colors"
+                          className="w-full hover:bg-teal-600 hover:text-white transition-colors"
                           variant="outline"
                         >
                           Register for {camp.name}

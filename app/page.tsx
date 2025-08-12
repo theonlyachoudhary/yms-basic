@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Star, Users, Shield, Heart, ArrowRight } from 'lucide-react'
 import Image from "next/image"
+import Link from "next/link"
 
 export default function HomePage() {
   const ageGroups = [
@@ -12,7 +13,7 @@ export default function HomePage() {
       description: "Building confidence through fun, sport-specific activities",
       boysColor: "#FFD166",
       girlsColor: "#FFB5A7",
-      subCamps: ["Multi-Sport", "Soccer Basics", "Basketball Fun", "Track & Field"],
+      subCamps: ["Boys Soccer", "Girls Basketball"],
       image: "/placeholder.svg?height=200&width=300&text=Little+Champions+5-7"
     },
     {
@@ -21,7 +22,7 @@ export default function HomePage() {
       description: "Developing skills in specialized sports with teamwork focus",
       boysColor: "#2DB5A8",
       girlsColor: "#74D3CE",
-      subCamps: ["Soccer Academy", "Basketball Skills", "Track & Field", "Tennis Basics"],
+      subCamps: ["Boys Tennis", "Boys Soccer", "Girls Soccer", "Boys Basketball","Girls Volleyball"],
       image: "/placeholder.svg?height=200&width=300&text=Rising+Stars+8-10"
     },
     {
@@ -30,38 +31,8 @@ export default function HomePage() {
       description: "Advanced sport-specific training with leadership development",
       boysColor: "#2C5E44",
       girlsColor: "#C97A97",
-      subCamps: ["Elite Soccer", "Basketball Academy", "Track & Field Pro", "Tennis Academy", "Swimming"],
+      subCamps: ["Boys Tennis", "Boys Soccer", "Girls Volleyball"],
       image: "/placeholder.svg?height=200&width=300&text=Future+Leaders+11-13"
-    },
-    {
-      age: "14-16",
-      title: "Elite Athletes",
-      description: "Competitive sport-specific training with scholarship preparation",
-      boysColor: "#9B1D20", 
-      girlsColor: "#6A3F78",
-      subCamps: ["Soccer Elite", "Basketball Elite", "Track & Field Elite", "Tennis Elite", "Swimming Elite", "Martial Arts"],
-      image: "/placeholder.svg?height=200&width=300&text=Elite+Athletes+14-16"
-    }
-  ]
-
-  const testimonials = [
-    {
-      name: "Amina Hassan",
-      role: "Mother of 3",
-      content: "Finally found a place where my children can be active while staying true to our values. The coaches are amazing!",
-      rating: 5
-    },
-    {
-      name: "Omar Abdullah", 
-      role: "Father of 2",
-      content: "My daughters love coming here. They've gained so much confidence and made wonderful friends in a safe environment.",
-      rating: 5
-    },
-    {
-      name: "Fatima Al-Zahra",
-      role: "Mother of 4", 
-      content: "The Islamic values integrated into sports training is exactly what we were looking for. Highly recommend!",
-      rating: 5
     }
   ]
 
@@ -86,14 +57,16 @@ export default function HomePage() {
                 <Button size="lg" className="bg-teal-600 hover:bg-teal-700">
                   Explore Programs <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-slate-300">
-                  Watch Our Story
-                </Button>
+                <Link href="/about" passHref legacyBehavior>
+                  <Button size="lg" variant="outline" className="border-slate-300">
+                    About Us
+                  </Button>
+                </Link>
               </div>
               <div className="mt-8 flex items-center gap-6 text-sm text-slate-600">
                 <div className="flex items-center gap-2">
                   <Users className="h-4 w-4 text-teal-600" />
-                  <span>500+ Happy Families</span>
+                  <span>Dozens of Happy Families</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-teal-600" />
@@ -105,14 +78,15 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative flex justify-center lg:block">
               <div className="relative z-10">
                 <Image
-                  src="/placeholder.svg?height=500&width=600&text=Muslim+Youth+Playing+Sports"
+                  src="/home.webp"
                   alt="Muslim youth playing sports"
                   width={600}
                   height={500}
                   className="rounded-2xl shadow-2xl"
+                  priority
                 />
               </div>
               <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-teal-200 to-orange-200 rounded-2xl -z-10"></div>
@@ -133,10 +107,10 @@ export default function HomePage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
             {ageGroups.map((group, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-                <CardContent className="p-0">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg h-full flex flex-col">
+                <CardContent className="p-0 flex flex-col h-full">
                   <div className="relative overflow-hidden rounded-t-lg">
                     <Image
                       src={group.image || "/placeholder.svg"}
@@ -154,7 +128,7 @@ export default function HomePage() {
                       </Badge>
                     </div>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1 pb-20 relative">
                     <h3 className="text-xl font-bold text-slate-800 mb-2 font-oswald">{group.title}</h3>
                     <p className="text-slate-600 mb-4">{group.description}</p>
           
@@ -190,9 +164,38 @@ export default function HomePage() {
                         title="Girls Programs"
                       ></div>
                     </div>
-                    <Button variant="outline" className="w-full group-hover:bg-teal-50">
-                      View All Camps
-                    </Button>
+                    <Link
+                      href={`/programs#${group.title.replace(/\s+/g, '-')}`}
+                      className="w-[calc(100%-2rem)] mx-4 absolute left-0 bottom-0 rounded-b-lg"
+                      style={{ textDecoration: 'none' }}
+                      scroll={true}
+                    >
+                      <Button
+                        variant="outline"
+                        className="w-full transition-colors"
+                        style={{
+                          borderColor: group.boysColor,
+                          color: group.boysColor,
+                          ...( { ['--hover-bg' as any]: group.boysColor } as any )
+                        }}
+                      >
+                        <span
+                          style={{
+                            display: 'block',
+                            width: '100%',
+                          }}
+                          className="hover:text-white"
+                        >
+                          View All Camps
+                        </span>
+                        <style>{`
+                          .w-full:hover {
+                            background-color: var(--hover-bg) !important;
+                            color: #fff !important;
+                          }
+                        `}</style>
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -246,48 +249,7 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=400&width=500&text=Islamic+Values+in+Sports"
-                alt="Islamic values in sports"
-                width={500}
-                height={400}
-                className="rounded-2xl shadow-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-oswald">
-              What Parents Are Saying
-            </h2>
-            <p className="text-xl text-slate-600">
-              Hear from families who&#39;ve found their home at YMS Sports
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-slate-600 mb-4 italic">&quot;{testimonial.content}&quot;</p>
-                  <div>
-                    <p className="font-semibold text-slate-800">{testimonial.name}</p>
-                    <p className="text-sm text-slate-500">{testimonial.role}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            {/* Image removed from More Than Just Sports section */}
           </div>
         </div>
       </section>
@@ -302,12 +264,11 @@ export default function HomePage() {
             Give your children the gift of sports in an Islamic environment. Registration is now open for all age groups.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-teal-600 hover:bg-gray-50">
-              Register Your Child
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-teal-600">
-              Schedule a Visit
-            </Button>
+            <Link href="/programs" passHref legacyBehavior>
+              <Button size="lg" className="bg-white text-teal-600 hover:bg-gray-300">
+                Register Your Child
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
