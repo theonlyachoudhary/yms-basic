@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -6,8 +7,16 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ArrowLeft, MessageCircle, Calendar, Users } from 'lucide-react'
 import Link from "next/link"
+import { useState } from "react"
+import { submitContactForm } from "@/lib/firestore"
 
 export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [childAge, setChildAge] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
   // contactInfo removed: phone, email, office hours
 
   // faqs removed
@@ -46,16 +55,33 @@ export default function ContactPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <form onSubmit={async (e) => {
+                    e.preventDefault();
+                    setLoading(true);
+                    setError("");
+                    setSuccess(false);
+                    try {
+                      await submitContactForm({ name, childAge, message });
+                      setSuccess(true);
+                      setName("");
+                      setChildAge("");
+                      setMessage("");
+                    } catch {
+                      setError("Something went wrong. Please try again.");
+                    } finally {
+                      setLoading(false);
+                    }
+                  }} className="space-y-6">
                     <div className="space-y-2">
-                      <Label htmlFor="firstName">First Name *</Label>
-                      <Input id="firstName" placeholder="Your first name" />
+                      <Label htmlFor="name">Your Name *</Label>
+                      <Input
+                        id="name"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        required
+                        placeholder="Your name"
+                      />
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="lastName">Last Name *</Label>
-                      <Input id="lastName" placeholder="Your last name" />
-                    </div>
-                  </div>
                   
                   <div className="space-y-2">
                     {/* Email Address field removed */}
@@ -81,34 +107,41 @@ export default function ContactPage() {
                     </Select>
                   </div>
                   
-                  <div className="space-y-2">
-                    <Label htmlFor="childAge">Child&#39;s Age (if applicable)</Label>
-                    <Select>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select age group" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="5-7">5-7 years old</SelectItem>
-                        <SelectItem value="8-10">8-10 years old</SelectItem>
-                        <SelectItem value="11-13">11-13 years old</SelectItem>
-                        <SelectItem value="14-16">14-16 years old</SelectItem>
-                        <SelectItem value="17+">17+ years old</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="childAge">Child's Age (if applicable)</Label>
+                      <Input
+                        id="childAge"
+                        value={childAge}
+                        onChange={e => setChildAge(e.target.value)}
+                        placeholder="e.g. 8"
+                      />
+                    </div>
                   
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Tell us how we can help you..."
-                      className="min-h-[120px]"
-                    />
-                  </div>
-                  
-                  <Button className="w-full bg-teal-600 hover:bg-teal-700">
-                    Send Message
-                  </Button>
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message *</Label>
+                      <Textarea
+                        id="message"
+                        value={message}
+                        onChange={e => setMessage(e.target.value)}
+                        required
+                        placeholder="Tell us how we can help you..."
+                        className="min-h-[120px]"
+                      />
+                    </div>
+                    <Button
+                      className="w-full bg-teal-600 hover:bg-teal-700"
+                      type="submit"
+                      disabled={loading}
+                    >
+                      {loading ? "Sending..." : "Send Message"}
+                    </Button>
+                    {success && (
+                      <div className="text-green-600 text-center font-semibold">Message sent! We&#39;ll be in touch soon.</div>
+                    )}
+                    {error && (
+                      <div className="text-red-600 text-center font-semibold">{error}</div>
+                    )}
+                  </form>
                 </CardContent>
               </Card>
             </div>
@@ -152,7 +185,7 @@ export default function ContactPage() {
             Ready to Join Our Community?
           </h2>
           <p className="text-xl text-teal-100 mb-8">
-            Don&#39;t wait – spaces fill up quickly! Register your child today and give them the gift of sports in an Islamic environment.
+            Don&#39;t wait &#8211; spaces fill up quickly! Register your child today and give them the gift of sports in an Islamic environment.
           </p>
           <Button size="lg" className="bg-white text-teal-600 hover:bg-gray-50">
             Register Now

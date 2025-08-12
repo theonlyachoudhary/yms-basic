@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Star, Users, Shield, Heart, ArrowRight } from 'lucide-react'
+import { Users, Shield, Heart, ArrowRight } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 
@@ -14,7 +14,7 @@ export default function HomePage() {
       boysColor: "#FFD166",
       girlsColor: "#FFB5A7",
       subCamps: ["Boys Soccer", "Girls Basketball"],
-      image: "/placeholder.svg?height=200&width=300&text=Little+Champions+5-7"
+      image: "/girlsbasketball.webp"
     },
     {
       age: "8-10", 
@@ -23,7 +23,7 @@ export default function HomePage() {
       boysColor: "#2DB5A8",
       girlsColor: "#74D3CE",
       subCamps: ["Boys Tennis", "Boys Soccer", "Girls Soccer", "Boys Basketball","Girls Volleyball"],
-      image: "/placeholder.svg?height=200&width=300&text=Rising+Stars+8-10"
+      image: "/boysbasketball.webp"
     },
     {
       age: "11-13",
@@ -32,7 +32,7 @@ export default function HomePage() {
       boysColor: "#2C5E44",
       girlsColor: "#C97A97",
       subCamps: ["Boys Tennis", "Boys Soccer", "Girls Volleyball"],
-      image: "/placeholder.svg?height=200&width=300&text=Future+Leaders+11-13"
+      image: "/boyssoccer.webp"
     }
   ]
 
@@ -54,9 +54,11 @@ export default function HomePage() {
                 Empowering Muslim youth through sports while nurturing Islamic values, character, and community bonds in a safe, supportive environment.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-teal-600 hover:bg-teal-700">
-                  Explore Programs <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link href="/programs" passHref legacyBehavior>
+                  <Button size="lg" className="bg-teal-600 hover:bg-teal-700">
+                    Explore Programs <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
                 <Link href="/about" passHref legacyBehavior>
                   <Button size="lg" variant="outline" className="border-slate-300">
                     About Us
@@ -131,7 +133,6 @@ export default function HomePage() {
                   <div className="p-6 flex flex-col flex-1 pb-20 relative">
                     <h3 className="text-xl font-bold text-slate-800 mb-2 font-oswald">{group.title}</h3>
                     <p className="text-slate-600 mb-4">{group.description}</p>
-          
                     {/* Sub-camps list */}
                     <div className="mb-4">
                       <p className="text-sm font-semibold text-slate-700 mb-2">Available Camps:</p>
@@ -151,7 +152,6 @@ export default function HomePage() {
                         ))}
                       </div>
                     </div>
-          
                     <div className="flex gap-2 mb-4">
                       <div 
                         className="w-4 h-4 rounded-full"
@@ -164,37 +164,34 @@ export default function HomePage() {
                         title="Girls Programs"
                       ></div>
                     </div>
-                    <Link
-                      href={`/programs#${group.title.replace(/\s+/g, '-')}`}
-                      className="w-[calc(100%-2rem)] mx-4 absolute left-0 bottom-0 rounded-b-lg"
-                      style={{ textDecoration: 'none' }}
-                      scroll={true}
-                    >
-                      <Button
-                        variant="outline"
-                        className="w-full transition-colors"
-                        style={{
-                          borderColor: group.boysColor,
-                          color: group.boysColor,
-                          ...( { ['--hover-bg' as any]: group.boysColor } as any )
-                        }}
-                      >
-                        <span
+                    <Link href={`/programs#${group.title.replace(/\s+/g, '-')}`} passHref legacyBehavior>
+                      <a className="w-[calc(100%-2rem)] mx-4 absolute left-0 bottom-0 rounded-b-lg" style={{ textDecoration: 'none' }}>
+                        <Button
+                          variant="outline"
+                          className="w-full transition-colors"
                           style={{
-                            display: 'block',
-                            width: '100%',
+                            borderColor: group.boysColor,
+                            color: group.boysColor,
+                            ['--hover-bg' as string]: group.boysColor
                           }}
-                          className="hover:text-white"
                         >
-                          View All Camps
-                        </span>
-                        <style>{`
-                          .w-full:hover {
-                            background-color: var(--hover-bg) !important;
-                            color: #fff !important;
-                          }
-                        `}</style>
-                      </Button>
+                          <span
+                            style={{
+                              display: 'block',
+                              width: '100%',
+                            }}
+                            className="hover:text-white"
+                          >
+                            View All Camps
+                          </span>
+                          <style>{`
+                            .w-full:hover {
+                              background-color: var(--hover-bg) !important;
+                              color: #fff !important;
+                            }
+                          `}</style>
+                        </Button>
+                      </a>
                     </Link>
                   </div>
                 </CardContent>
@@ -205,9 +202,9 @@ export default function HomePage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-slate-50">
+  <section className="py-20 pb-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-3xl mx-auto">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 font-oswald">
                 More Than Just Sports

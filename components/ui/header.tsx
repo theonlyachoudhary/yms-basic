@@ -21,7 +21,9 @@ export default function Header() {
                 <Link href="/contact" className="text-slate-700 hover:text-teal-600 px-3 py-2 text-xl font-medium font-oswald">Contact</Link>
               </div>
             </div>
+            <Link href="/programs">
             <Button className="bg-teal-600 hover:bg-teal-700 text-lg">Explore Programs</Button>
+            </Link>
           </div>
         </div>
       </nav>
