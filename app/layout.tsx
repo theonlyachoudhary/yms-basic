@@ -24,7 +24,7 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   title: "Youth Muslim Sports",
-  description: "Empowering Muslim youth through sports.",
+  description: "Empowering Muslim youth through sports while nurturing Islamic values, character, and community bonds in a safe, supportive environment.",
 };
 
 export default function RootLayout({
@@ -36,6 +36,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
   <link rel="icon" href="/yms-favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="Youth Muslim Sports – Empowering Muslim Youth Through Sports & Islamic Values" />
+  <meta property="og:description" content="Empowering Muslim youth through sports while nurturing Islamic values, character, and community bonds in a safe, supportive environment. Join our camps for skill, fun, and faith!" />
+  <meta property="og:image" content="https://youthmuslimsports.org/logo.webp" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://youthmuslimsports.org/logo.webp" />
       </head>
       <body
         className={`

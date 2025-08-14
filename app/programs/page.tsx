@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Clock, Users, Trophy, Heart, ArrowLeft, Calendar, Star } from 'lucide-react'
+import { Users, DollarSign, Heart, ArrowLeft, Calendar, Star, Map } from 'lucide-react'
 import Link from "next/link"
 
 export default function ProgramsPage() {
@@ -19,30 +19,19 @@ export default function ProgramsPage() {
       subCamps: [
         {
           name: "Girls Basketball",
-          description: "Basketball program for girls at Ackerman Sports & Fitness Center",
-          focus: [
-            "Dribbling basics",
-            "Shooting form",
-            "Passing & catching",
-            "Listening skills",
-            "Playing as a team"
-          ],
-          schedule: "Sundays, Aug 9 – Sep 14",
+          description: "Our camp kicks off in less than a week! Don’t miss out on this unique opportunity for your little one to grow in a fun and faith-based environment led by Coach Kulsoom, Insha’Allah.",
+          schedule: "Sundays, Aug 9 – Sep 13",
           price: "Ackerman Sports & Fitness Center",
-          note: "🚨Deadline Aug 16"
+          registerLink: "https://youthmuslimsports.fillout.com/gybb",
+          fee: "110"
         },
         {
           name: "Boys Soccer",
-          description: "Soccer program for boys at Spring Ave Recreation Center",
-          focus: [
-            "Dribbling",
-            "Kicking technique",
-            "Following rules",
-            "Sharing the ball",
-            "Sportsmanship"
-          ],
+          description: "The Fall Boys Soccer Camp (Ages 5–7) kicks off Aug 23 with 5 Saturdays of skill-building and active fun, led by Coach Yaqub Biese InshaAllah!",
           schedule: "Saturdays, Aug 23 – Sep 27",
-          price: "Spring Ave Recreation Center"
+          price: "Spring Ave Recreation Center",
+          registerLink: "https://youthmuslimsports.fillout.com/fybs",
+          fee: "110"
         }
       ]
     },
@@ -59,70 +48,51 @@ export default function ProgramsPage() {
       subCamps: [
         {
           name: "Boys Tennis",
-          description: "Tennis program for boys at Madison Meadows Tennis Courts",
-          focus: [
-            "Forehand & backhand",
-            "Rallying",
-            "Serving basics",
-            "Court movement",
-            "Respect for opponents"
-          ],
+          description: "Serve it. Smash it. Love it. This season join Coach Farhan Shariff, a passionate player and proven winner, on the court for TWO exciting tennis camps designed just for our youth.",
           schedule: "Fridays, Aug 29 – Sep 26",
-          price: "Madison Meadows Tennis Courts"
+          price: "Madison Meadows Tennis Courts",
+          registerLink: "https://youthmuslimsports.fillout.com/sbyt",
+          fee: "150"
         },
         {
           name: "Girls Soccer",
-          description: "Soccer program for girls at Spring Ave Recreation Center",
-          focus: [
-            "Dribbling",
-            "Passing",
-            "Shooting",
-            "Defending",
-            "Encouraging teammates"
-          ],
+          description: "YMS is bringing the heat to the pitch to cap off the summer! This fun and passionate soccer camp led by Coach Nadine is designed for girls ages 8–10, focusing on skill-building, teamwork, and confidence in a supportive, faith-filled environment, Insha’Allah.",
           schedule: "Sundays, Sep 7 – Oct 5",
-          price: "Spring Ave Recreation Center"
+          price: "Spring Ave Recreation Center",
+          registerLink: "https://youthmuslimsports.fillout.com/sfgs",
+          fee: "110"
         },
         {
           name: "Boys Soccer",
-          description: "Soccer program for boys at Sunset Knoll Recreation Center",
-          focus: [
-            "Ball control",
-            "Passing accuracy",
-            "Shooting technique",
-            "Defensive positioning",
-            "Teamwork"
-          ],
+          description: "Join our Fall Boys Soccer Camp, just for boys ages 8–10! Coach Yaqub Biese guides young athletes in skills, teamwork, and character, Insha'Allah.",
           schedule: "Sundays, Aug 24 – Sep 28",
-          price: "Sunset Knoll Recreation Center"
+          price: "Sunset Knoll Recreation Center",
+          registerLink: "https://youthmuslimsports.fillout.com/fbks",
+          fee: "110"
         },
         {
           name: "Boys Basketball",
-          description: "Basketball program for boys at Ackerman Sports & Fitness Center",
-          focus: [
-            "Dribbling under pressure",
-            "Layups & shooting",
-            "Passing in motion",
-            "Defensive stance",
-            "Game rules"
-          ],
+          description: "Dribble, shoot, and score with friends in a high-energy environment.",
           schedule: "Saturdays, Sep 6 – Oct 12",
           price: "Ackerman Sports & Fitness Center",
-          note: "Early Bird Code: bbeb"
+          registerLink: "https://youthmuslimsports.fillout.com/fbbb",
+          fee: "110"
+        },
+        {
+          name: "Girls Basketball",
+          description: "Ready to play confident and strong? Girls ages 8–10 train on the court to improve their game and character, Insha'Allah!",
+          schedule: "Sundays, Aug 3 – Sep 12",
+          price: "Ackerman Sports & Fitness Center",
+          registerLink: "https://youthmuslimsports.fillout.com/gkbb",
+          fee: "110"
         },
         {
           name: "Girls Volleyball",
-          description: "Volleyball program for girls at Ackerman Sports & Fitness Center",
-          focus: [
-            "Underhand serve",
-            "Bumping & setting",
-            "Court awareness",
-            "Calling the ball",
-            "Supporting teammates"
-          ],
+          description: "Get ready to jump, serve, and have a blast! YMS is hosting a fun-packed volleyball camp for girls ages 8–10, where young athletes will learn the fundamentals, boost confidence, and make new friends, all while having an unforgettable time on the court Insha’Allah.",
           schedule: "Sundays, Sep 7 – Oct 5",
           price: "Ackerman Sports & Fitness Center",
-          note: "Early Bird Code: Yveb"
+          registerLink: "https://youthmuslimsports.fillout.com/syvb",
+          fee: "150"
         }
       ]
     },
@@ -139,43 +109,27 @@ export default function ProgramsPage() {
       subCamps: [
         {
           name: "Boys Tennis",
-          description: "Tennis program for boys at Madison Meadows Tennis Courts",
-          focus: [
-            "Serve technique",
-            "Forehand/backhand consistency",
-            "Net play",
-            "Match scoring",
-            "Sportsmanship"
-          ],
+          description: "Serve it. Smash it. Love it. This season join Coach Farhan Shariff, a passionate player and proven winner, on the court for TWO exciting tennis camps designed just for our youth.",
           schedule: "Fridays, Aug 29 – Sep 26",
-          price: "Madison Meadows Tennis Courts"
+          price: "Madison Meadows Tennis Courts",
+          registerLink: "https://youthmuslimsports.fillout.com/sbts",
+          fee: "150"
         },
         {
           name: "Boys Soccer",
-          description: "Soccer program for boys at Sunset Knoll Recreation Center",
-          focus: [
-            "Advanced dribbling",
-            "Passing under pressure",
-            "Shooting accuracy",
-            "Defensive tactics",
-            "Game strategy"
-          ],
+          description: "Train this fall with Coach Yaqub Biese! This performance-focused soccer camp is designed for boys ages 11–13, offering an empowering blend of skill development and faith-based encouragement, Insha'Allah.",
           schedule: "Sundays, Aug 24 – Sep 28",
-          price: "Sunset Knoll Recreation Center"
+          price: "Sunset Knoll Recreation Center",
+          registerLink: "https://youthmuslimsports.fillout.com/fbts",
+          fee: "110"
         },
         {
           name: "Girls Volleyball",
-          description: "Volleyball program for girls at Ackerman Sports & Fitness Center",
-          focus: [
-            "Overhand serve",
-            "Setting & spiking",
-            "Rotations",
-            "Team communication",
-            "Game rules"
-          ],
+          description: "Step onto the court and elevate your game! Join YMS for a dynamic volleyball camp where girls ages 11–13 will spike, serve, and block like pros while building confidence, teamwork, and leadership in a fun, faith-filled environment, Insha’Allah.",
           schedule: "Sundays, Sep 7 – Oct 5",
           price: "Ackerman Sports & Fitness Center",
-          note: "Early Bird Code: gveb"
+          registerLink: "https://youthmuslimsports.fillout.com/sfvb",
+          fee: "110"
         }
       ]
     },
@@ -199,7 +153,7 @@ export default function ProgramsPage() {
           </p>
           {/* Navigation Tags */}
           <div className="flex flex-wrap gap-3 mt-8 justify-start">
-            {programs.map((program, idx) => (
+            {programs.map((program) => (
               <a
                 key={program.title}
                 href={`#${program.title.replace(/\s+/g, '-')}`}
@@ -258,7 +212,7 @@ export default function ProgramsPage() {
                 {/* Sub-camps Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {program.subCamps.map((camp, campIndex) => (
-                    <Card key={campIndex} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <Card key={campIndex} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group relative">
                       <CardHeader className="pb-4">
                         <div className="flex items-center justify-between mb-2">
                           <Badge 
@@ -279,32 +233,44 @@ export default function ProgramsPage() {
                           {camp.name}
                         </CardTitle>
                       </CardHeader>
-                      <CardContent className="space-y-4">
+                      <CardContent className="space-y-4 pb-32">
                         <p className="text-slate-600">
                           {camp.description}
                         </p>
-                        <div className="grid grid-cols-2 gap-4 text-sm">
-                          <div className="flex items-center gap-2">
-                            <Clock className="h-4 w-4 text-teal-600" />
-                            <span className="text-slate-600">{program.duration}</span>
+                        {/* Info and button appear normally after description */}
+                        <div className="absolute left-0 bottom-0 w-full flex flex-col gap-4 px-6 pb-6 pt-4">
+                          <div className="grid grid-cols-2 gap-4 text-sm">
+                            <div className="flex items-center gap-2">
+                              <Calendar className="h-4 w-4 text-teal-600" />
+                              <span className="text-slate-600">{camp.schedule}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Map className="h-8 w-8 text-teal-600" />
+                              <span className="text-slate-600">{camp.price}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <DollarSign className="h-4 w-4 text-teal-600" />
+                              <span className="text-slate-600">{camp.fee}</span>
+                            </div>
                           </div>
-                          {/* groupSize removed from display */}
-                          <div className="flex items-center gap-2">
-                            <Calendar className="h-4 w-4 text-teal-600" />
-                            <span className="text-slate-600 text-xs">{camp.schedule}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Trophy className="h-4 w-4 text-teal-600" />
-                            <span className="text-slate-600 font-semibold">{camp.price}</span>
-                          </div>
+                          {camp.registerLink ? (
+                            <Link href={camp.registerLink} passHref legacyBehavior>
+                              <Button 
+                                className="w-full hover:bg-teal-600 hover:text-white transition-colors"
+                                variant="outline"
+                              >
+                                Register
+                              </Button>
+                            </Link>
+                          ) : (
+                            <Button 
+                              className="w-full hover:bg-teal-600 hover:text-white transition-colors"
+                              variant="outline"
+                            >
+                              Register
+                            </Button>
+                          )}
                         </div>
-                        {/* Focus Areas section removed */}
-                        <Button 
-                          className="w-full hover:bg-teal-600 hover:text-white transition-colors"
-                          variant="outline"
-                        >
-                          Register for {camp.name}
-                        </Button>
                       </CardContent>
                     </Card>
                   ))}
@@ -329,7 +295,7 @@ export default function ProgramsPage() {
             <Card className="border-0 shadow-lg text-center">
               <CardContent className="p-8">
                 <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Trophy className="h-8 w-8 text-teal-600" />
+                  <DollarSign className="h-8 w-8 text-teal-600" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-3 font-oswald">
                   Skill Mastery
@@ -365,25 +331,6 @@ export default function ProgramsPage() {
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-teal-600 to-teal-700">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-oswald">
-            Find Your Child&#39;s Perfect Sport
-          </h2>
-          <p className="text-xl text-teal-100 mb-8">
-            With over 20 specialized camps across all age groups, we have the perfect program for every young athlete.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-teal-600 hover:bg-gray-50">
-              Register Now
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-teal-600">
-              Schedule a Trial Session
-            </Button>
           </div>
         </div>
       </section>

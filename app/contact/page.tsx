@@ -108,7 +108,7 @@ export default function ContactPage() {
                   </div>
                   
                     <div className="space-y-2">
-                      <Label htmlFor="childAge">Child's Age (if applicable)</Label>
+                      <Label htmlFor="childAge">Child&#39;s Age (if applicable)</Label>
                       <Input
                         id="childAge"
                         value={childAge}
@@ -157,16 +157,12 @@ export default function ContactPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <Link href="/programs" passHref legacyBehavior>
+                  <Link href="/programs">
                     <Button className="w-full justify-start bg-teal-600 hover:bg-teal-700">
                       <Users className="h-4 w-4 mr-2" />
                       Register for Programs
                     </Button>
                   </Link>
-                  <div className="w-full flex items-center gap-2 px-4 py-2 text-slate-700">
-                    <MessageCircle className="h-4 w-4 mr-2" />
-                    <span>Message us on WhatsApp</span>
-                  </div>
                 </CardContent>
               </Card>
 
@@ -187,9 +183,11 @@ export default function ContactPage() {
           <p className="text-xl text-teal-100 mb-8">
             Don&#39;t wait &#8211; spaces fill up quickly! Register your child today and give them the gift of sports in an Islamic environment.
           </p>
+          <Link href="/programs">
           <Button size="lg" className="bg-white text-teal-600 hover:bg-gray-50">
             Register Now
           </Button>
+          </Link>
         </div>
       </section>
     </div>
